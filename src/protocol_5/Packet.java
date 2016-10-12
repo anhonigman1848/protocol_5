@@ -4,18 +4,12 @@ import java.util.Arrays;
 
 public class Packet {
 
-	int MAX_PKT = 4;
-	
 	char[] data;
 	
-	public Packet(char[] passed_data) {
+	public Packet(char[] passedData, int PACKET_SIZE) {
 
-			data = Arrays.copyOf(passed_data, MAX_PKT);
+			data = Arrays.copyOf(passedData, PACKET_SIZE);
 		
-	}
-
-	public int getMAX_PKT() {
-		return MAX_PKT;
 	}
 
 	public char[] getData() {

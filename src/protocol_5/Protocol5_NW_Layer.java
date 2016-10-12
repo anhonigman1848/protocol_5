@@ -12,13 +12,13 @@ public class Protocol5_NW_Layer {
 	
 	private int packet_size;
 	
-	public Protocol5_NW_Layer(int packetSize) {
+	public Protocol5_NW_Layer(int PACKET_SIZE) {
 		
 		nw_buffer = new Vector<Packet>();
 		
-		packet_index = 0;
+		packet_size = PACKET_SIZE;
 		
-		packet_size = packetSize;
+		packet_index = 0;
 		
 	}
 	
@@ -28,16 +28,18 @@ public class Protocol5_NW_Layer {
 			
 			for(int i = 0; i < data.length; i += packet_size) {
 				
+				int current_size = packet_size;
+				
 				if(data.length - i < packet_size) {
 					
-					packet_size = data.length - i;
+					current_size = data.length - i;
 										
 				}
-				char[] packet_data = new char[packet_size];
+				char[] packet_data = new char[current_size];
 				
-				System.arraycopy(data, i, packet_data, 0, packet_size);
+				System.arraycopy(data, i, packet_data, 0, current_size);
 				
-				Packet new_packet = new Packet(packet_data);
+				Packet new_packet = new Packet(packet_data, packet_size);
 				
 				nw_buffer.addElement(new_packet);
 				
