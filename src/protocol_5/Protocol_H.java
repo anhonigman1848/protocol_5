@@ -6,7 +6,7 @@ public class Protocol_H {
 		
 		final int PACKET_SIZE = 5;
 		
-		String test = "konsert nr 2 for violin och orkester";
+		String test = "test1 test2 test3 blah blah";
 		
 		char[] test_array = test.toCharArray();
 		
