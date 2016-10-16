@@ -48,7 +48,7 @@ public class Frame {
 	 */
 	public String toString() {
 		return "Frame [seq_nr=" + seq_nr + ", ack_nr=" + ack_nr + ", packet="
-				+ packet + ", frame_kind=" + frame_kind + "]";
+				+ packet.toString() + ", frame_kind=" + frame_kind + "]";
 	}
 	
 	
